@@ -9,7 +9,7 @@ export function Header() {
 
         <nav>
           <a className={styles.active} href="/">Home</a>
-          <a href="/">Posts</a>
+          <a href="/posts">Posts</a>
         </nav>
         
         <SignInButton />
