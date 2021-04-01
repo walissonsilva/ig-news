@@ -8,10 +8,11 @@
   max-width: 720px;
   margin: 5rem auto 0;
 
-  a {
+  div {
     display: block;
+    cursor: pointer;
 
-    & + a {
+    & + div {
       margin-top: 2rem;
       padding-top: 2rem;
       border-top: 1px solid var(--gray-700);
