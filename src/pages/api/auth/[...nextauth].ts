@@ -3,6 +3,8 @@ import Providers from 'next-auth/providers'
 import { query as q } from 'faunadb';
 
 import { fauna } from '../../../services/fauna';
+import { WithAdditionalParams } from 'next-auth/_utils';
+
 
 export default NextAuth({
   providers: [
@@ -16,7 +18,7 @@ export default NextAuth({
     signingKey: process.env.SIGNING_KEY,
   },
   callbacks: {
-    async session(session: Session) {
+    async session(session: Session): Promise<WithAdditionalParams<Session>> {
       try {
         const userActiveSubscription = await fauna.query(
           q.Get(
